@@ -1,0 +1,4 @@
+ARG TARGET_JAVA_VERSION=11
+ARG BASE_IMAGE_VERSION_CODENAME=bullseye
+FROM mcr.microsoft.com/devcontainers/base:${BASE_IMAGE_VERSION_CODENAME}
+
