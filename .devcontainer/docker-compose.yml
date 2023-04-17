@@ -1,39 +1,5 @@
 version: '3.8'
 services:
-  app:
-    build: .
-    container_name: JavaGame
-    depends_on:
-      - db
-    links:
-      - db
-    ports:
-      - "3000:3000"
-    expose:
-      - "3000:3000"
-
-  db:
-    build: ./database
-    container_name: database
-    image: mysql:latest
-    environment:
-      MYSQL_USER: 'root'
-      MYSQL_ROOT_PASSWORD: 'Enr1co.1'
-      MYSQL_DATABASE: 'applifortest'
-    ports:
-      - "8080:8080"
-    volumes:
-      - ./db:/var/lib/mysql
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin:latest
-    container_name: pma
-    environment:
-      PMA_HOST: db
-      PMA_PORT: 3306
-      PMA_ARBITRARY: 1
-    links:
-      - db
-    depends_on:
-      - db
-    ports:
-      - "8081:80"
+  # Update this to the name of the service you want to work with in your docker-compose.yml file
+app:
+  command: /bin/sh -c "while sleep 1000; do :; done"
